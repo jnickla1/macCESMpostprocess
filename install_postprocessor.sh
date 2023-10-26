@@ -14,7 +14,7 @@ conda update --all
 conda create -n cesm-env0
 conda install -n cesm-env0 pip
 conda install -n cesm-env0 git
-conda install -n cesm-env0 openmpi
+conda install openmpi-mpicc
 conda install -n cesm-env0 virtualenv
 conda install -n cesm-env0 nco
 conda install -n cesm-env0 ncl
