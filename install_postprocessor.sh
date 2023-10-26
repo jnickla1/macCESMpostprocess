@@ -22,7 +22,8 @@ conda install -n cesm-env0 ncl
 echo "Installing things with pip"
 conda activate cesm-env0
 pip3 install PyAverager netcdf4 
-pip3 install scipy matplotlib cf-units
+pip3 install scipy matplotlib 
+pip3 install cf_units
 pip3 install cartopy
 pip3 install mpi4py virtualenv-clone
 
