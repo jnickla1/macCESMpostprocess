@@ -43,9 +43,11 @@ mv ../macCESMpostprocess/utley_modules Machines/
 sed -i '' "s|/Users/jnicklas1/cesmppp/CESM_postprocessing|${PWD}|g" Machines/utley_modules
 mv ../macCESMpostprocess/machine_postprocess.xml Machines/
 PYTHONROOT=$(which python)
-envROOT=${${PYTHONROOT%/*}%/*}
+envPYTHONRT=${PYTHONROOT%/*}
+envROOT=${envPYTHONRT%/*}
 PYTHONverF=$(python -V)
-PYverC=${${PYTHONverF:7}%.*}
+PYTHONverG=${PYTHONverF:7}
+PYverC=${PYTHONverG%.*}
 sed -i '' "s|/Users/jnicklas1/miniforge3/envs/cesm-env0|${envROOT}|g" Machines/machine_postprocess.xml
 sed -i '' "s|python3.12|python${PYverC}|g" Machines/machine_postprocess.xml
 ./create_python_env -machine utley
