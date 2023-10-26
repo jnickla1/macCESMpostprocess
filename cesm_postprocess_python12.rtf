@@ -1,0 +1,158 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2639
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 .AppleSystemUIFontMonospaced-Regular;\f1\fnil\fcharset0 Menlo-Regular;\f2\fswiss\fcharset0 ArialMT;
+\f3\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red224\green233\blue240;\red224\green232\blue240;
+\red0\green0\blue0;\red25\green25\blue25;\red0\green0\blue0;\red49\green49\blue49;\red235\green239\blue24;
+}
+{\*\expandedcolortbl;;\cssrgb\c0\c1\c1;\cssrgb\c90313\c93062\c95303;\cssrgb\c90196\c92941\c95294;
+\csgray\c0;\cssrgb\c12941\c12941\c12941;\cssrgb\c0\c0\c0\c5882;\cssrgb\c25098\c25098\c25098;\cssrgb\c93803\c93590\c10850;
+}
+\margl1440\margr1440\vieww29560\viewh16140\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs27\fsmilli13600 \cf2 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec3 curl -L -O "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh"\
+bash Miniforge3-$(uname)-$(uname -m).sh\
+\cf4 \strokec4 Say yes to 
+\f1\fs22 \cf5 \kerning1\expnd0\expndtw0 \CocoaLigature0 \outl0\strokewidth0 conda init
+\f0\fs27\fsmilli13600 \cf4 \expnd0\expndtw0\kerning0
+\CocoaLigature1 \outl0\strokewidth0 \strokec4 \
+\
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs29\fsmilli14667 \AppleTypeServices\AppleTypeServicesF65539 \cf6 \cb7 \outl0\strokewidth0 mkdir cesmppp
+\f3 \AppleTypeServices\AppleTypeServicesF65539 \cf6 \cb7 \
+
+\f2 \AppleTypeServices\AppleTypeServicesF65539 \cf6 \cb7 cd cesmppp
+\f3 \AppleTypeServices\AppleTypeServicesF65539 \cf6 \cb7 \
+
+\f2 \AppleTypeServices\AppleTypeServicesF65539 \cf6 \cb7 export cesmppp=$(pwd)
+\f3 \AppleTypeServices\AppleTypeServicesF65539 \cf6 \cb7 \
+
+\f2 \AppleTypeServices\AppleTypeServicesF65539 \cf6 \cb7 echo $cesmppp
+\f3 \AppleTypeServices\AppleTypeServicesF65539 \cf6 \cb7 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\pardirnatural\partightenfactor0
+
+\f1\fs22 \AppleTypeServices \cf5 \cb1 \kerning1\expnd0\expndtw0 \CocoaLigature0 \
+\
+brew install openmpi\
+conda update --all\
+conda create -n cesm-env0\
+\
+conda activate cesm-env0\
+pip3 install PyAverager netcdf4 \
+pip3 install scipy matplotlib cf-units\
+pip3 install cartopy\
+conda install -n cesm-env0 virtualenv\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs29\fsmilli14667 \AppleTypeServices\AppleTypeServicesF65539 \cf6 \cb7 \expnd0\expndtw0\kerning0
+\CocoaLigature1 conda install -n cesm-env0 nco
+\f1\fs22 \AppleTypeServices \cf5 \cb1 \kerning1\expnd0\expndtw0 \CocoaLigature0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\pardirnatural\partightenfactor0
+conda install -n cesm-env0 ncl\
+\
+pip3 install mpi4py virtualenv-clone\
+\
+\pard\pardeftab720\partightenfactor0
+
+\fs24 \cf8 \expnd0\expndtw0\kerning0
+\CocoaLigature1 git clone https://github.com/NCAR/ASAPPyTools\
+cd ASAPPyTools\
+python setup.py install\
+cd ..\
+git clone https://github.com/NCAR/PyReshaper\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\pardirnatural\partightenfactor0
+
+\fs22 \cf5 \kerning1\expnd0\expndtw0 \CocoaLigature0 cd PyReshaper\
+\pard\pardeftab720\partightenfactor0
+
+\fs24 \cf8 \expnd0\expndtw0\kerning0
+\CocoaLigature1 python setup.py install\
+\
+\pard\pardeftab720\partightenfactor0
+
+\fs22 \cf5 \kerning1\expnd0\expndtw0 \CocoaLigature0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\pardirnatural\partightenfactor0
+cd ../CESM_postprocessing\
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs29\fsmilli14667 \AppleTypeServices\AppleTypeServicesF65539 \cf6 \cb7 \expnd0\expndtw0\kerning0
+\CocoaLigature1 make\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\pardirnatural\partightenfactor0
+
+\f1\fs22 \AppleTypeServices \cf5 \cb1 \kerning1\expnd0\expndtw0 \CocoaLigature0 \
+In utley_modules:\
+export pp_dir=/Users/jnicklas1/cesmppp/CESM_postprocessing\
+mamba create -p $\{pp_dir\}/cesm-env2 --clone cesm-env0\
+\
+In machine_postprocess:\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+    <mpi_command>mpirun</mpi_command>\
+    <ocn_remap_pes queue="regular" nodes="4" pes_per_node="9" wallclock="08:00:00">32</ocn_remap_pes>\
+    <pythonpath>/Users/jnicklas1/miniforge3/envs/cesm-env0/lib/python3.12</pythonpath>\
+    <f2py fcompiler="gnu95" f77exec="/usr/local/bin/gfortran">f2py</f2py>\
+    <za>\
+      <compiler>gfortran</compiler>\
+      <flags>-c -g -O2 -fallow-argument-mismatch</flags>\
+      <include>-I/Users/jnicklas1/miniforge3/envs/cesm-env0/include</include>\
+      <libs>-L/Users/jnicklas1/miniforge3/envs/cesm-env0/lib -lnetcdff -lnetcdf</libs>\
+\
+\
+./create_python_env -machine utley\
+\
+Should get: **********************************************************************************************\
+\
+SUCCESS: create_python_env CESM post processing virtual environment installed successfully in \
+/Users/jnicklas1/cesmppp/CESM_postprocessing/cesm-env2.\
+\
+\
+Move activate_this.py into cesm-env2/bin folder\
+\
+In /Users/jnicklas1/cesmppp/CESM_postprocessing/cesm_utils/cesm_utils/create_postprocess.py\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf9  657 \cf5     envDict['MACH'] = 'utley'\
+\
+\
+cd \\case\\directory\\to\\postprocess\
+create_postprocess -caseroot $(pwd)   \
+\
+\
+Should get:\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+*****************************************************************************************\
+SUCCESS!\
+ The CASEROOT postprocess directory /Volumes/lawrencedata/cesm1/b.scontrol1/postprocess\
+ now contains all the necessary post-processing submit scripts and associated\'85.\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\
+\
+Alter vi env_postprocess.xml to match the current run\
+\
+Open vi env_timeseries.xml and make sure the ocean component has: <comp_archive_spec name="pop">\
+    <rootdir>ocn</rootdir>\
+I want full 100-year time series files, so set all <tseries_filecat_n>100</tseries_filecat_n>\
+\
+\
+Edit timeseries\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf9 40\'85\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf5 echo $pwd\
+cd ..\
+eval "$(conda shell.bash hook)"\
+conda activate $(pwd)\
+cd bin\
+\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\cf9 60 \cf5 mpirun -n 36 --oversubscribe ./cesm_tseries_generator.py --debug 2 \
+\
+Edit  $POSTPROCESS_PATH/timeseries/timeseries/cesm_tseries_generator.py\
+\cf9 73 \cf5     return options.caseroot, options.debug, options.standalone, options.backtrace\
+\
+./timeseries & disown\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardirnatural\partightenfactor0
+\
+}
