@@ -18,8 +18,9 @@ cd /path/to/where/you/downloaded/macCESMpostprocess
 cd ..
 ```
 
-## STEP 1: Download, install MAMBA
+## STEP 1: Download, install MAMBA and Command Line Tools
 ```
+xcode-select --install
 curl -L -O "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh"
 bash Miniforge3-$(uname)-$(uname -m).sh
 ```
