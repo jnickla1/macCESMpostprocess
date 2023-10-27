@@ -21,21 +21,24 @@ conda install -n cesm-env0 ncl
 
 echo "Installing things with pip"
 conda activate cesm-env0
-pip3 install PyAverager netcdf4 
+pip3 install netcdf4 
 pip3 install scipy matplotlib 
 pip3 install cf_units
 pip3 install cartopy
 pip3 install mpi4py virtualenv-clone
 
-echo "Installing things from source via github"
+echo "Installing one thing from source via github"
 git clone https://github.com/NCAR/ASAPPyTools
 cd ASAPPyTools
 python setup.py install
 cd ..
-git clone https://github.com/NCAR/PyReshaper
-cd PyReshaper
-python setup.py install
-cd ..
+###These two components will be installed by CESM_postprocessing itself, but if that doesnt work, try to install individually
+##git clone https://github.com/NCAR/PyReshaper
+##cd PyReshaper
+##python setup.py install
+##cd ..
+##pip3 install PyAverager 
+
 git clone https://github.com/NCAR/CESM_postprocessing
 cd CESM_postprocessing
 
