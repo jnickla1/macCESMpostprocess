@@ -12,12 +12,12 @@ echo "Installing things with Conda"
 conda init
 conda update --all
 conda create -n cesm-env0
-conda install -n cesm-env0 pip
-conda install -n cesm-env0 git
-conda install -n cesm-env0 openmpi-mpicc
-conda install -n cesm-env0 virtualenv
-conda install -n cesm-env0 nco
-conda install -n cesm-env0 ncl
+mamba install -n cesm-env0 pip
+mamba install -n cesm-env0 git
+mamba install -n cesm-env0 openmpi-mpicc
+mamba install -n cesm-env0 virtualenv
+mamba install -n cesm-env0 nco
+mamba install -n cesm-env0 ncl
 
 echo "Installing things with pip"
 conda activate cesm-env0
