@@ -22,7 +22,8 @@ mamba install -n cesm-env0 nco
 mamba install -n cesm-env0 ncl
 
 echo "Installing things with pip"
-conda activate cesm-env0
+#conda activate cesm-env0
+conda shell.bash hook
 pip3 install netcdf4 
 pip3 install scipy matplotlib 
 pip3 install cf_units
