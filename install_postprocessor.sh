@@ -22,7 +22,7 @@ mamba install -n cesm-env0 nco
 mamba install -n cesm-env0 ncl
 
 echo "Installing things with pip"
-conda shell.bash hook
+eval "$(conda shell.bash hook)"
 conda activate cesm-env0
 pip3 install netcdf4 
 pip3 install scipy matplotlib 
