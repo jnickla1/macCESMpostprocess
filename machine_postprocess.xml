@@ -130,7 +130,7 @@
     <xconform_pes queue="geyser" nodes="1" pes_per_node="16" wallclock="06:00:00" memory="100G">64</xconform_pes>
     <mpi_command>mpirun -n 36 --oversubscribe</mpi_command>
     <ocn_remap_pes queue="regular" nodes="4" pes_per_node="9" wallclock="08:00:00">32</ocn_remap_pes>
-    <pythonpath>/Users/jnicklas1/miniforge3/envs/cesm-env0/lib/python3.12</pythonpath>
+    <pythonpath>/Users/jnicklas1/miniforge3/envs/cesm-env0/lib/python3.11</pythonpath>
     <f2py fcompiler="gnu95" f77exec="/usr/local/bin/gfortran">f2py</f2py>
     <za>
       <compiler>gfortran</compiler>
