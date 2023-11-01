@@ -30,6 +30,7 @@ Respond "yes" to all requests including running conda init.
 ```
 bash macCESMpostprocess/install_postprocessor.sh
 ```
+If an error happens, your terminal will print something that says "error", but this code will just keep marching along. Try to examine this bash script and re-attempt in isolation the installation step that didn't work.
 
 ## STEP 3: Instantiate postprocessing.
 This creates a code folder within your case output directory
