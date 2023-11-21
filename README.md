@@ -52,6 +52,6 @@ For instance, you can do (noting the ulimit command for the averaging scripts)
 ```
 ./timeseries & disown
 
-ulimit -n 10000
+ulimit -n 4000
 ./atm_averages & disown
 ```
