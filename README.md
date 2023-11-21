@@ -48,7 +48,10 @@ These env files were created for a gx3v7 CESM run that went for 75 years.
 **Note that only time series script has been tested, averaging and diagnostic scripts are still being tested.
 
 ## STEP 5: Run individual scripts. 
-For instance, you can do
+For instance, you can do (noting the ulimit command for the averaging scripts)
 ```
 ./timeseries & disown
+
+ulimit -n 10000
+./atm_averages & disown
 ```
