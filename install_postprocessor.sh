@@ -20,6 +20,7 @@ mamba install -n cesm-env0 openmpi-mpicc
 mamba install -n cesm-env0 virtualenv
 mamba install -n cesm-env0 nco
 mamba install -n cesm-env0 ncl
+mamba install -n cesm-env0 -c conda-forge gfortran
 
 echo "Installing things with pip"
 eval "$(conda shell.bash hook)"
