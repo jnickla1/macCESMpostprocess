@@ -28,9 +28,14 @@ bash Miniforge3-$(uname)-$(uname -m).sh
 Respond "yes" to all requests including running conda init.
 ## STEP 2: Restart the shell (close the Terminal window, open a new one), and run the following interactive script.
 ```
-bash macCESMpostprocess/install_postprocessor.sh
+bash macCESMpostprocess/install_postprocessor.sh 2>&1 | tee -a macCESMpostprocess/install.out
 ```
-If an error happens, your terminal will print something that says "error", but this code will just keep marching along. Try to examine this bash script and re-attempt in isolation the installation step that didn't work.
+If an error happens, your terminal will print something that says "error", but this code will just keep marching along. 
+```
+grep -i "error" macCESMpostprocess/install.out
+```
+This should return just one instance of `+ error` where a part of a file is read to the terminal.
+If this grep search gives anything in addition. that, examine the install.out record and the bash script. Then re-attempt the installation step that didn't work in isolation. You are welcome to create an issue or contact me.
 
 ## STEP 3: Instantiate postprocessing.
 This creates a code folder within your case output directory
