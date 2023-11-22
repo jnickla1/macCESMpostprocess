@@ -49,8 +49,7 @@ cd postprocess
 
 ## STEP 4: Modify the env files to fit your case. 
 Look at those in the macCESMpostprocess folder for guidance.
-These env files were created for a gx3v7 CESM run that went for 75 years.
-**Note that only time series script has been tested, averaging and diagnostic scripts are still being tested.
+These env files were created for a gx3v7 CESM1 run.
 
 ## STEP 5: Run individual scripts. 
 For instance, you can do (noting the ulimit command for the averaging scripts)
@@ -60,3 +59,4 @@ For instance, you can do (noting the ulimit command for the averaging scripts)
 ulimit -n 4000
 ./atm_averages & disown
 ```
+**Note that only timeseries and atm_averages scripts have been debugged as of Nov 22 2023.
