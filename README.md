@@ -28,7 +28,7 @@ bash Miniforge3-$(uname)-$(uname -m).sh
 Respond "yes" to all requests including running conda init.
 ## STEP 2: Restart the shell (close the Terminal window, open a new one), and run the following interactive script.
 ```
-bash macCESMpostprocess/install_postprocessor.sh 2>&1 | tee -a macCESMpostprocess/install.out
+bash macCESMpostprocess/install_postprocessor.sh 2>&1 | tee macCESMpostprocess/install.out
 ```
 If an error happens, your terminal will print something that says "error", but this code will just keep marching along. 
 ```
