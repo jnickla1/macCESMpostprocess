@@ -34,7 +34,7 @@ If an error happens, your terminal will print something that says "error", but t
 ```
 grep -i "error" macCESMpostprocess/install.out
 ```
-This should return just one instance of `+ error` where a part of a file is read to the terminal.
+This should return just one instance of `+ error=0` where a part of a file is read to the terminal.
 If this grep search gives anything in addition to that, examine the install.out record and the bash script. Then re-attempt the installation step that didn't work in isolation. You are welcome to create an issue on this github or contact me.
 
 ## STEP 3: Instantiate postprocessing.
