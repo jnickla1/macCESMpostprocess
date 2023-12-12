@@ -72,7 +72,7 @@ sed -i '' "s|options.caseroot\[0\]|options.caseroot|g" timeseries/timeseries/ces
 #averager stuff - deal with scalar metavariables
 unzip cesm-env2/lib/python3.11/site-packages/PyAverager-0.9.17-py3.11.egg -d cesm-env2/lib/python3.11/site-packages/
 mv cesm-env2/lib/python3.11/site-packages/PyAverager-0.9.17-py3.11.egg ../../macCESMpostprocess/PyAverager-0.9.17-py3.11.egg-old
-sed -i '' "623s|len(in_meta) > 0:|(np.ndim(in_meta)==0): out_meta[()]==in_meta[()]|g" cesm-env2/lib/python3.11/site-packages/pyaverager/climFileIO.py
+sed -i '' "623s|(len(in_meta) > 0):|(np.ndim(in_meta)==0): out_meta[()]==in_meta[()]|g" cesm-env2/lib/python3.11/site-packages/pyaverager/climFileIO.py
 sed -i '' "624s|    o|elif (len(in_meta) > 0): o|g" cesm-env2/lib/python3.11/site-packages/pyaverager/climFileIO.py
 
 echo "Install Complete"
